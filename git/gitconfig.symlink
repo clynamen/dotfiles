@@ -1,0 +1,18 @@
+[user]
+	name = clynamen
+	email = clynamen@gmail.com
+
+[alias]
+        co = checkout
+        promote = !$ZSH/bin/git-promote
+        wtf     = !$ZSH/bin/git-wtf
+        rank-contributers = !$ZSH/bin/git-rank-contributers
+        count   = !git shortlog -sn
+	lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative --graph
+[color]
+        diff = auto
+        status = auto
+        branch = auto
+        ui = true
+[core]
+        editor = vim
