@@ -42,6 +42,7 @@ bindkey "^[[4~" end-of-line
 bindkey "^[[8~" end-of-line
 bindkey "^?" backward-delete-char
 bindkey '^R' history-incremental-search-backward
+bindkey "^[q" push-line
 
 # End of lines configured by zsh-newuser-install
 # Code highlighting
