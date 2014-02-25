@@ -165,3 +165,6 @@ au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:U
 
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<tab>"
+
+"========= vimperator tmp file syntax=====
+au BufNewFile,BufRead *.tmp setf none

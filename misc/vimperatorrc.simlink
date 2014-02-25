@@ -1,0 +1,6 @@
+"3.8.1 (created: 2013/11/21 23:49:14)
+
+set "editor=urxvt -e vim -f"
+source! /home/clynamen/.vimperatorrc.local
+
+" vim: set ft=vimperator:
