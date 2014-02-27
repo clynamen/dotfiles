@@ -1,0 +1,29 @@
+#!/bin/bash
+#this file is called by .xinitrc to start some nice apps for dwm
+
+xrdb -merge ~/.Xresources &
+
+sh ~/.fehbg &
+
+source /home/clynamen/.localvar
+
+if [ $LAPTOP ]; then
+
+while true; do
+  xsetroot -name "$(date +"%A %d/%m/%y %H:%M:%S")  $(df -h | grep '/dev/sda5' | awk '{print " /: " $4"/"$2 }')  $(df -h | grep /dev/sda6 | awk '{print " /home: " $3"/"$2 }')  $(df -h | grep '/tmp' | awk '{print " /tmp: " $3"/"$2 }')    $(amixer -c 0 get Master | grep "Mono:" | awk '{print "Master: " $4 " " $6 }') wifi: $(iwconfig 2>&1  | grep Signal | awk '{print $4$5}' | sed -s 's/level=//g')  bat: $(acpi | awk '{print $4 $5 " " $6}' | tr ',' ' ') [$(setxkbmap -print | grep -oe '+[a-zA-Z]\{2\}+' | sed s/+//g)] "
+	sleep 1
+done &
+
+else 
+
+while true; do
+  xsetroot -name "$(date +"%A %d/%m/%y %H:%M:%S")   $(df -h | grep rootfs | awk '{print " / : " $3"/"$2 " avail: " $4}')   $(df -h | grep tmpfs | awk '{print " /tmp : " $3"/"$2 " avail: " $4}')   $(amixer -c 0 get Master | grep "Mono:" | awk '{print "Master: " $4 " " $6 }') "
+	sleep 1
+done &
+
+fi
+
+while true; do
+	dwm || exit
+done
+
