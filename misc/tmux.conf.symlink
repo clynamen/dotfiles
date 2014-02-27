@@ -1,0 +1,9 @@
+set -g default-terminal "screen-256color"
+set -g base-index 1
+set -g pane-base-index 1
+
+#send command to inner tmux session
+bind-key a send-prefix
+
+#enable mouse scrooling
+#set -g mode-mouse on
