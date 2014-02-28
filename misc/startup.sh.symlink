@@ -1,29 +1,13 @@
-source /home/clynamen/.localvar
+#!/bin/bash
+#dunst &
 
-dunst &
-
-if [ $LAPTOP ]; then 
-  bash ~/.scripts/setBackground.sh
-else 
-  feh --bg-fill ~/images/wallpaper/fractal.png
-fi
-
-
-xrdb -merge ~/.Xresources
+xrdb -merge ~/.Xresources &
 
 xcompmgr -c &
 
-
-#/usr/share/eclipse/eclimd &
-
-source .startupLocal.sh
-
-urxvt -e "weechat-curses" &
+#urxvt -e "weechat-curses" &
 
 udiskie &
-skype&
+#skype&
 
-turnDS on &
-
-xbindkeys
-
+xbindkeys &

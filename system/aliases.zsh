@@ -30,7 +30,7 @@ alias watchfile="python2 /home/clynamen/software/executables/python/when-changed
 alias ytogg="bash ~/.scripts/ytogg.sh"
 alias turnDS="bash ~/.scripts/turnDS.sh"
 alias mountKiwi="truecrypt ~/software/kiwi/kiwiTruecrypt ~/software/kiwi/mountpoint"
-alias umountKiwi="sudo kill -9 $(lsof ~/software/kiwi/mountpoint | awk '{ print $2 }' | tr '\n' ' ' | tr 'PID' ' '); sudo truecrypt -d ~/software/kiwi/mountpoint"
+alias umountKiwi="sudo kill -9 \$(lsof ~/software/kiwi/mountpoint | awk '{ print $2 }' | tr '\n' ' ' | tr 'PID' ' '); sudo truecrypt -d ~/software/kiwi/mountpoint"
 
 # --- other stuff
 
