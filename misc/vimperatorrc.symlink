@@ -3,4 +3,7 @@
 set "editor=urxvt -e vim -f"
 source! /home/clynamen/.vimperatorrc.local
 
+map <c-j> :tabprevious<cr>
+map <c-k> :tabnext<cr>
+
 " vim: set ft=vimperator:

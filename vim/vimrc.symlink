@@ -8,13 +8,15 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
  " my bundles
 Bundle 'Valloric/YouCompleteMe'
-"Bundle 'Rip-Rip/clang_complete'
 Bundle 'wesleyche/SrcExpl'
 Bundle 'Command-T'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'Chiel92/vim-autoformat'
+Bundle 'techlivezheng/vim-plugin-minibufexpl'
+Bundle 'c9s/perlomni.vim'
+Bundle 'scrooloose/nerdcommenter.git'
 
 filetype plugin indent on     " required!
 filetype plugin on
@@ -114,6 +116,8 @@ nmap <silent> <c-right> :call eclim#vimplugin#FeedKeys('Ctrl+Right')<cr>
 
 " buffer navigation 
 map <Leader>t :CommandTBuffer <CR>
+map <C-l> :bnext<cr>
+map <C-h> :bprevious<cr>
 
 " ========== Autoformat ============
 noremap <F3> :Autoformat<CR><CR>
@@ -147,12 +151,12 @@ endfunction
 
 "=========ultisnips - ycm conflicts ======
 function! g:UltiSnips_Complete()
-    call UltiSnips_ExpandSnippet()
+    call UltiSnips#ExpandSnippet()
     if g:ulti_expand_res == 0
         if pumvisible()
             return "\<C-n>"
         else
-            call UltiSnips_JumpForwards()
+            call UltiSnips#JumpForwards()
             if g:ulti_jump_forwards_res == 0
                return "\<TAB>"
             endif
