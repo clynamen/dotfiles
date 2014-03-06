@@ -1,0 +1,1 @@
+zsh antigen-git vundle-git feh xcompmgr tmux firefox vundle-git
