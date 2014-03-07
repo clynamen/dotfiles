@@ -38,9 +38,6 @@ flags = [
 '-Wall',
 '-Wextra',
 #'-Werror',
-'-Wc++98-compat',
-'-Wno-long-long',
-'-Wno-variadic-macros',
 '-fexceptions',
 '-DNDEBUG',
 # You 100% do NOT need -DUSE_CLANG_COMPLETER in your flags; only the YCM
@@ -82,8 +79,6 @@ flags = [
 './tests/gmock',
 '-isystem',
 './tests/gmock/include',
-'-I',
-'/home/clynamen/software/uni/apa/vsl/'
 ]
 
 # Set this to the absolute path to the folder (NOT the file!) containing the

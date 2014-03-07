@@ -1,1 +1,33 @@
-zsh antigen-git vundle-git feh xcompmgr tmux firefox vundle-git acpi
+
+zsh antigen-git vundle-git feh xcompmgr tmux firefox vundle-git acpi 
+
+adobe-source-code-pro-fonts adobe-source-sans-pro-fonts artwiz-fonts
+bdf-unifont cantarell-fonts fluidsynth font-bh-ttf font-bitstream-speedo
+font-misc-ethiopic font-misc-meltho fontconfig fontforge fontsproto freetype2
+ftgl gnome-font-viewer gsfonts kdeplasma-addons-applets-charselect libfontenc
+libfs libotf libxfont libxft pangox-compat sdl2_ttf sdl_ttf t1lib
+tex-gyre-fonts texlive-fontsextra texlive-genericextra texlive-langcjk
+texlive-langcyrillic texlive-langgreek texmacs ttf-arphic-ukai
+ttf-arphic-uming ttf-baekmuk ttf-bitstream-vera ttf-cheapskate ttf-dejavu
+ttf-freebanglafont ttf-freefont ttf-hannom ttf-indic-otf ttf-junicode
+ttf-khmer ttf-linux-libertine ttf-mph-2b-damase ttf-sazanami
+ttf-tibetan-machine ttf-tlwg ttf-ubraille xorg-bdftopcf xorg-font-util
+xorg-font-utils xorg-fonts-100dpi xorg-fonts-75dpi xorg-fonts-alias
+xorg-fonts-cyrillic xorg-fonts-encodings xorg-fonts-misc xorg-fonts-type1
+xorg-mkfontdir xorg-mkfontscale xorg-xfd xorg-xfontsel xorg-xlsfonts dina-font
+font-mathematica fonteditfs gtk2_prefs gtk2fontsel mate-utils mftrace
+opendesktop-fonts otf-ipafont perl-font-afm profont python2-fonttools t1utils
+tamsyn-font terminus-font ttf-droid ttf-hanazono ttf-inconsolata
+ttf-liberation ttf-linux-libertine-g ttf-symbola ttf-ubuntu-font-family
+wqy-bitmapfont wqy-microhei wqy-microhei-lite wqy-zenhei lib32-fontconfig
+lib32-freetype2 lib32-libxft lib32-sdl_ttf
+
+font-bh-ttf sdl2_ttf sdl_ttf ttf-arphic-ukai ttf-arphic-uming ttf-baekmuk
+ttf-bitstream-vera ttf-cheapskate ttf-dejavu ttf-freebanglafont ttf-freefont
+ttf-hannom ttf-indic-otf ttf-junicode ttf-khmer ttf-linux-libertine
+ttf-mph-2b-damase ttf-sazanami ttf-tibetan-machine ttf-tlwg ttf-ubraille
+mftrace opendesktop-fonts ttf-droid ttf-gentium ttf-hanazono ttf-inconsolata
+ttf-liberation ttf-linux-libertine-g ttf-symbola ttf-ubuntu-font-family
+lib32-sdl_ttf
+
+oxygen-gtk2 oxygen-gtk3

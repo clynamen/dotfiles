@@ -12,13 +12,15 @@ Bundle 'wesleyche/SrcExpl'
 Bundle 'Command-T'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
-Bundle 'SirVer/ultisnips'
 Bundle 'Chiel92/vim-autoformat'
 Bundle 'techlivezheng/vim-plugin-minibufexpl'
 Bundle 'c9s/perlomni.vim'
-Bundle 'scrooloose/nerdcommenter.git'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'tpope/vim-surround'
+Bundle 'lekv/vim-clewn'
+Bundle 'SirVer/ultisnips'
 
-filetype plugin indent on     " required!
+filetype plugin indent on " required!
 filetype plugin on
 
 "set number "Line numbers are good
@@ -76,7 +78,7 @@ set pastetoggle=<F2>
 let g:C_Styles = { '.c,.h,.cc,.cpp,*.hh' : 'CPP' }
 
 " =============== Snippet ===========
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "/home/clynamen/.vim/clynamen-snippets"]
 
 " =============== SrcExpl =============
 nmap <F8> :SrcExplToggle<CR>
@@ -110,10 +112,6 @@ endif
 " ====== NERDTree =============
 map <F2> :NERDTreeToggle<cr>
 
-" ====== eclim shortcut =======
-nmap <silent> <c-left> :call eclim#vimplugin#FeedKeys('Ctrl+Left')<cr>
-nmap <silent> <c-right> :call eclim#vimplugin#FeedKeys('Ctrl+Right')<cr>
-
 " buffer navigation 
 map <Leader>t :CommandTBuffer <CR>
 map <C-l> :bnext<cr>
@@ -124,9 +122,9 @@ noremap <F3> :Autoformat<CR><CR>
 let g:formatprg_args_expr_c = '"--mode=c --style=java -pcH".(&expandtab ? "s".&shiftwidth : "t")'
  
 
-" ========== ultisnips =============
 let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
-nnoremap <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>[ :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>] :YcmCompleter GoToDefinition<CR>
 nnoremap <F5> :YcmForceCompileAndDiagnostics<CR> 
 
 "========= Syntastic ======
@@ -165,10 +163,9 @@ function! g:UltiSnips_Complete()
     return ""
 endfunction
 
+"inoremap <C-t> <ESC>:call UltiSnips#ExpandSnippet() <CR>i
 au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-
-let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<tab>"
+"
 
 "========= vimperator tmp file syntax=====
 au BufNewFile,BufRead *.tmp setf none
