@@ -169,3 +169,4 @@ au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:U
 
 "========= vimperator tmp file syntax=====
 au BufNewFile,BufRead *.tmp setf none
+au BufNewFile,BufRead *.test set filetype=xml
