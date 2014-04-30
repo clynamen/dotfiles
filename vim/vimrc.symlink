@@ -19,6 +19,7 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-surround'
 Bundle 'lekv/vim-clewn'
 Bundle 'SirVer/ultisnips'
+Bundle 'othree/xml.vim'
 
 filetype plugin indent on " required!
 filetype plugin on
@@ -170,3 +171,5 @@ au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:U
 "========= vimperator tmp file syntax=====
 au BufNewFile,BufRead *.tmp setf none
 au BufNewFile,BufRead *.test set filetype=xml
+au BufNewFile,BufRead *.launch set filetype=xml
+au BufNewFile,BufRead *.world set filetype=xml
