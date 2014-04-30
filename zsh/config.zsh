@@ -44,9 +44,5 @@ bindkey "^?" backward-delete-char
 bindkey '^R' history-incremental-search-backward
 bindkey "^[q" push-line
 
-# End of lines configured by zsh-newuser-install
-# Code highlighting
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 # Start tmux by default
 if [ "$TMUX" = "" ]; then tmux; fi
