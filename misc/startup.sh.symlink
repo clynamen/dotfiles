@@ -5,9 +5,9 @@ xrdb -merge ~/.Xresources &
 
 xcompmgr -c &
 
-#urxvt -e "weechat-curses" &
 
 udiskie &
-#skype&
+skype&
 
 xbindkeys &
+urxvt -e "weechat-curses" &

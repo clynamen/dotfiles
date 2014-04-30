@@ -1,9 +1,24 @@
 set -g default-terminal "screen-256color"
 set -g base-index 1
 set -g pane-base-index 1
+setw -g utf8 on
+set -g status-utf8 on
 
+bind-key c  new-window -c "#{pane_current_path}"
+
+# status bar config
+set -g status-left "#h:[#S]"
+set -g status-left-length 50
+set -g status-right-length 50
+set -g status-right " %H:%M %d-%h-%Y"
+setw -g window-status-current-format "|#I:#W|"
+set-window-option -g automatic-rename off
+
+# listen to alerts from all windows
+# set -g bell-action any
 #send command to inner tmux session
 bind-key a send-prefix
 
 #enable mouse scrooling
 #set -g mode-mouse on
+set -g history-limit 100000

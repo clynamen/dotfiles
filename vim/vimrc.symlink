@@ -29,7 +29,9 @@ set showmode "Show current mode down the bottom
 "set gcr=a:blinkon0 "Disable cursor blink
 "set visualbell "No sounds
 "set autoread "Reload files changed outside vim
-"
+set mouse=a
+
+
 set undodir=~/.vim-undo
 set backupdir=~/.vim-backup
 
@@ -76,7 +78,7 @@ set pastetoggle=<F2>
 let g:C_Styles = { '.c,.h,.cc,.cpp,*.hh' : 'CPP' }
 
 " =============== Snippet ===========
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "snippets"]
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 
 " =============== SrcExpl =============
 nmap <F8> :SrcExplToggle<CR>
