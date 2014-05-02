@@ -29,9 +29,16 @@ setopt NO_HIST_BEEP
 setopt NO_BEEP
 setopt NO_HUP
 
+
 # keybindings (defined AFTER scripts):
-bindkey '\e[A' history-beginning-search-backward
-bindkey '\e[B' history-beginning-search-forward
+autoload -Uz up-line-or-beginning-search
+autoload -Uz down-line-or-beginning-search
+zle -N up-line-or-beginning-search
+zle -N down-line-or-beginning-search
+bindkey '\eOA' up-line-or-beginning-search
+bindkey '\e[A' up-line-or-beginning-search
+bindkey '\eOB' down-line-or-beginning-search
+bindkey '\e[B' down-line-or-beginning-search
 bindkey "^[[2~" overwrite-mode
 bindkey "^[[3~" delete-char
 bindkey "^[[5~" up-line-or-search
@@ -43,6 +50,7 @@ bindkey "^[[8~" end-of-line
 bindkey "^?" backward-delete-char
 bindkey '^R' history-incremental-search-backward
 bindkey "^[q" push-line
+
 
 # Start tmux by default
 if [ "$TMUX" = "" ]; then tmux; fi
