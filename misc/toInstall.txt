@@ -31,3 +31,5 @@ ttf-liberation ttf-linux-libertine-g ttf-symbola ttf-ubuntu-font-family
 lib32-sdl_ttf
 
 oxygen-gtk2 oxygen-gtk3
+
+ncdu cdu antigen-git
