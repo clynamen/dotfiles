@@ -1,0 +1,9 @@
+#!/bin/bash
+lock="/home/clynamen/.scripts/volume.static"
+if [ $(cat $lock) == true ]; then
+   amixer -c 0 set Master unmute   
+   echo "false" > $lock
+else 
+   amixer -c 0 set Master mute
+   echo "true" >  $lock
+fi
