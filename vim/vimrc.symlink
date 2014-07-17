@@ -1,27 +1,36 @@
 "============= Vundle stuff ===============
 set nocompatible
 filetype off                   " required!
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
 
  " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
  " my bundles
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'wesleyche/SrcExpl'
-Bundle 'Command-T'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'Chiel92/vim-autoformat'
-Bundle 'techlivezheng/vim-plugin-minibufexpl'
-Bundle 'c9s/perlomni.vim'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'tpope/vim-surround'
-Bundle 'lekv/vim-clewn'
-Bundle 'SirVer/ultisnips'
-Bundle 'othree/xml.vim'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'wesleyche/SrcExpl'
+Plugin 'Command-T'
+Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/syntastic'
+Plugin 'Chiel92/vim-autoformat'
+Plugin 'techlivezheng/vim-plugin-minibufexpl'
+Plugin 'c9s/perlomni.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
+Plugin 'lekv/vim-clewn'
+Plugin 'SirVer/ultisnips'
+Plugin 'othree/xml.vim'
+Plugin 'flazz/vim-colorschemes'
 
-filetype plugin indent on " required!
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+
+"========================================== 
+
+
+filetype plugin indent on    " required
 filetype plugin on
 
 "set number "Line numbers are good

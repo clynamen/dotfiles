@@ -26,5 +26,9 @@ alias turnDS="bash ~/.scripts/turnDS.sh"
 # --- other stuff
 alias disableTouchpad="synclient TouchpadOff=1"
 
-source /home/clynamen/.aliasesLocal
+localAliasesFile="~/.aliasesLocal"
+
+if [[ -e $localAliasesFile ]]; then
+  source $localAliasesFile
+fi
 
