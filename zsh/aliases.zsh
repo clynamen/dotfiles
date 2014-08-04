@@ -30,3 +30,8 @@ alias rake="noglob rake"
 
 source /home/clynamen/.aliasesLocal
 
+localAliasesFile="~/.aliasesLocal"
+
+if [[ -e $localAliasesFile ]]; then
+  source $localAliasesFile
+fi
