@@ -26,5 +26,7 @@ alias turnDS="bash ~/.scripts/turnDS.sh"
 # --- other stuff
 alias disableTouchpad="synclient TouchpadOff=1"
 
+alias rake="noglob rake"
+
 source /home/clynamen/.aliasesLocal
 

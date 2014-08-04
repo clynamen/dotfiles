@@ -20,6 +20,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'lekv/vim-clewn'
 Bundle 'SirVer/ultisnips'
 Bundle 'othree/xml.vim'
+Bundle 'derekwyatt/vim-scala'
 
 filetype plugin indent on " required!
 filetype plugin on
@@ -149,6 +150,10 @@ function! ToggleLop()
   endif 
 endfunction 
 
+"======= Eclim ========
+"
+" completion with YCM
+let g:EclimCompletionMethod = 'omnifunc'
 
 "=========ultisnips - ycm conflicts ======
 function! g:UltiSnips_Complete()
