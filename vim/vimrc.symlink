@@ -23,6 +23,11 @@ Plugin 'SirVer/ultisnips'
 Plugin 'othree/xml.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'moll/vim-node'
+Plugin 'walm/jshint.vim'
+Plugin 'myhere/vim-nodejs-complete'
+Plugin 'sidorares/node-vim-debugger'
+Plugin 'JuliaLang/julia-vim'
 
 
 " All of your Plugins must be added before the following line
