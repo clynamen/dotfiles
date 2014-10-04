@@ -34,7 +34,7 @@ filetype plugin indent on    " required
 filetype plugin on
 
 "set number "Line numbers are good
-"set backspace=indent,eol,start "Allow backspace in insert mode
+set backspace=2 " make backspace work like most other apps
 set history=1000 "Store lots of :cmdline history
 set showcmd "Show incomplete cmds down the bottom
 set showmode "Show current mode down the bottom
@@ -46,7 +46,6 @@ set mouse=a
 
 set undodir=~/.vim-undo
 set backupdir=~/.vim-backup
-
 
 " use system clipboard
 set clipboard+=unnamed

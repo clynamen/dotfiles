@@ -20,5 +20,7 @@ set-window-option -g automatic-rename off
 bind-key a send-prefix
 
 #enable mouse scrooling
+set -g terminal-overrides 'xterm*:smcup@:rmcup@'
 #set -g mode-mouse on
 set -g history-limit 100000
+
