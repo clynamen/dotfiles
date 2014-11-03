@@ -20,7 +20,6 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'lekv/vim-clewn'
 Plugin 'SirVer/ultisnips'
-Plugin 'othree/xml.vim'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'moll/vim-node'
@@ -28,6 +27,7 @@ Plugin 'walm/jshint.vim'
 Plugin 'myhere/vim-nodejs-complete'
 Plugin 'sidorares/node-vim-debugger'
 Plugin 'JuliaLang/julia-vim'
+Plugin 'tmhedberg/matchit'
 
 
 " All of your Plugins must be added before the following line
@@ -50,7 +50,7 @@ set mouse=a
 
 set undodir=~/.vim-undo
 set backupdir=~/.vim-backup
-
+set directory=~/.vim-swap
 
 " use system clipboard
 set clipboard+=unnamed
