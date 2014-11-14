@@ -20,6 +20,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'tpope/vim-surround'
 Plugin 'lekv/vim-clewn'
 Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'moll/vim-node'
@@ -94,7 +95,7 @@ set pastetoggle=<F2>
 let g:C_Styles = { '.c,.h,.cc,.cpp,*.hh' : 'CPP' }
 
 " =============== Snippet ===========
-let g:UltiSnipsSnippetDirectories=["UltiSnips", "/home/clynamen/.vim/clynamen-snippets"]
+"let g:UltiSnipsSnippetDirectories=["UltiSnips", "/home/clynamen/.vim/clynamen-snippets"]
 
 " =============== SrcExpl =============
 nmap <F8> :SrcExplToggle<CR>
@@ -165,27 +166,32 @@ endfunction
 "======= Eclim ========
 "
 " completion with YCM
-let g:EclimCompletionMethod = 'omnifunc'
+"let g:EclimCompletionMethod = 'omnifunc'
 
 "=========ultisnips - ycm conflicts ======
-function! g:UltiSnips_Complete()
-    call UltiSnips#ExpandSnippet()
-    if g:ulti_expand_res == 0
-        if pumvisible()
-            return "\<C-n>"
-        else
-            call UltiSnips#JumpForwards()
-            if g:ulti_jump_forwards_res == 0
-               return "\<TAB>"
-            endif
-        endif
-    endif
-    return ""
-endfunction
+"function! g:UltiSnips_Complete()
+    "call UltiSnips#ExpandSnippet()
+    "if g:ulti_expand_res == 0
+        "if pumvisible()
+            "return "\<C-n>"
+        "else
+            "call UltiSnips#JumpForwards()
+            "if g:ulti_jump_forwards_res == 0
+               "return "\<TAB>"
+            "endif
+        "endif
+    "endif
+    "return ""
+"endfunction
 
 "inoremap <C-t> <ESC>:call UltiSnips#ExpandSnippet() <CR>i
-au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+"au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 "
+
+"========= ultisnips ====================
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 
 "========= vimperator tmp file syntax=====
 au BufNewFile,BufRead *.tmp setf none

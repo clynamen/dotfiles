@@ -4,10 +4,13 @@
 xrdb -merge ~/.Xresources &
 
 xcompmgr -c &
+xinput set-prop 13 265 1
 
 
 udiskie &
 skype&
 
 xbindkeys &
+
+sleep 2
 urxvt -e "weechat-curses" &
