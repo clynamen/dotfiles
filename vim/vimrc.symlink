@@ -29,6 +29,14 @@ Plugin 'myhere/vim-nodejs-complete'
 Plugin 'sidorares/node-vim-debugger'
 Plugin 'JuliaLang/julia-vim'
 Plugin 'tmhedberg/matchit'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'wlangstroth/vim-haskell'
+Plugin 'eagletmt/ghcmod-vim'
+Plugin 'eagletmt/neco-ghc'
+Plugin 'dag/vim2hs'
+Plugin 'godlygeek/tabular'
+"Plugin 'phildawes/racer'
+Plugin 'wting/rust.vim' 
 
 
 " All of your Plugins must be added before the following line
@@ -49,9 +57,9 @@ set showmode "Show current mode down the bottom
 set mouse=a
 
 
-set undodir=~/.vim-undo
-set backupdir=~/.vim-backup
-set directory=~/.vim-swap
+set undodir=~/.vim-undo//
+set backupdir=~/.vim-backup//
+set directory=~/.vim-swap//
 
 " use system clipboard
 set clipboard+=unnamed
@@ -93,9 +101,6 @@ set pastetoggle=<F2>
 
 " =============== CSupport ===========
 let g:C_Styles = { '.c,.h,.cc,.cpp,*.hh' : 'CPP' }
-
-" =============== Snippet ===========
-"let g:UltiSnipsSnippetDirectories=["UltiSnips", "/home/clynamen/.vim/clynamen-snippets"]
 
 " =============== SrcExpl =============
 nmap <F8> :SrcExplToggle<CR>
@@ -163,38 +168,34 @@ function! ToggleLop()
   endif 
 endfunction 
 
-"======= Eclim ========
-"
-" completion with YCM
-"let g:EclimCompletionMethod = 'omnifunc'
 
-"=========ultisnips - ycm conflicts ======
-"function! g:UltiSnips_Complete()
-    "call UltiSnips#ExpandSnippet()
-    "if g:ulti_expand_res == 0
-        "if pumvisible()
-            "return "\<C-n>"
-        "else
-            "call UltiSnips#JumpForwards()
-            "if g:ulti_jump_forwards_res == 0
-               "return "\<TAB>"
-            "endif
-        "endif
-    "endif
-    "return ""
-"endfunction
+"========= haskell =====================
+let g:haddock_browser = "/usr/bin/firefox"
+let g:ghc = "/usr/bin/ghc"
+let $PATH = $PATH . ':' . expand('~/.cabal/bin')
 
-"inoremap <C-t> <ESC>:call UltiSnips#ExpandSnippet() <CR>i
-"au BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
-"
-
-"========= ultisnips ====================
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-b>"
-
-"========= vimperator tmp file syntax=====
+"========= specific file options =====
 au BufNewFile,BufRead *.tmp setf none
 au BufNewFile,BufRead *.test set filetype=xml
 au BufNewFile,BufRead *.launch set filetype=xml
 au BufNewFile,BufRead *.world set filetype=xml
+
+"========= Haskell ===================
+setlocal omnifunc=necoghc#omnifunc
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+let g:necoghc_enable_detailed_browse = 1
+
+"========= ultisnips ====================
+"
+"let g:UltiSnipsSnippetDirectories=["UltiSnips", "/home/clynamen/.vim/clynamen-snippets/"]
+"
+"let g:UltiSnipsExpandTrigger="<c-j>"
+"let g:UltiSnipsJumpForwardTrigger="<c-j>"
+"let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+"
+""============ latex ===============
+"" LaTeX (rubber) macro for compiling
+"nnoremap <leader>c :w<CR>:!rubber --pdf --warn all %<CR>
+"" View PDF macro; '%:r' is current file's root (base) name.
+"nnoremap <leader>v :!okular %:r.pdf > /dev/null 2>&1 &<CR><CR>
+
