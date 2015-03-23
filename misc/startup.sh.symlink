@@ -8,9 +8,11 @@ xinput set-prop 13 265 1
 
 
 udiskie &
-#skype&
+skype&
 
 xbindkeys &
+
+/home/clynamen/.scripts/batteryNotify.sh &
 
 sleep 2
 urxvt -e "weechat-curses" &

@@ -4,7 +4,7 @@
 feh --bg-scale '/home/clynamen/images/wallpaper/fractal.png' &
 
 while true; do
-  xsetroot -name "[$(setxkbmap -print | grep -Po '(?<=pc\+)[a-z]+')]  $(date +"%A %d/%m/%y %H:%M:%S")  $(df -h | grep sda5 | awk '{print "/: "$3"/"$2 " free: " $4}') - charge: $(acpi | grep -o '[0-9]\{1,\}%') - $(amixer -c 0 get Master | grep "Mono:" | awk '{print "Master: " $4 " " $6 }') "
+  xsetroot -name "$(free -h | awk '/Mem/{print $7}') [$(setxkbmap -print | grep -Po '(?<=pc\+)[a-z]+')]  $(date +"%A %d/%m/%y %H:%M:%S")  $(df -h | grep sda5 | awk '{print "/: "$3"/"$2 " free: " $4}') - charge: $(acpi | grep -o '[0-9]\{1,\}%') - $(amixer -c 0 get Master | grep "Mono:" | awk '{print "Master: " $4 " " $6 }') "
   sleep 1
 done &
 
