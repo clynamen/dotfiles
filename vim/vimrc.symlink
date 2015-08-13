@@ -41,7 +41,12 @@ Plugin 'lukerandall/haskellmode-vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Twinside/vim-hoogle'
 Plugin 'fatih/vim-go'
-
+Plugin 'xolox/vim-lua-ftplugin'
+Plugin 'xolox/vim-misc'
+Plugin 'zah/nimrod.vim'
+"html/css
+Plugin 'mattn/emmet-vim'
+Plugin 'jaxbot/browserlink.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -192,6 +197,20 @@ setlocal omnifunc=necoghc#omnifunc
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 let g:necoghc_enable_detailed_browse = 1
 
+let g:haskell_conceal = 0
+
+"=========== Lua =====================
+let g:lua_compiler_name = '/usr/bin/luajit'
+let g:lua_check_syntax = 1
+let g:lua_check_globals = 1
+let g:lua_check_syntax = 0 " done via syntastic
+let g:lua_define_omnifunc = 0 " must be enabled also (g:lua_complete_omni=1, but crashes Vim!)
+let g:lua_complete_library = 0 " interferes with YouCompleteMe
+let g:lua_complete_dynamic = 0 " interferes with YouCompleteMe
+
+" :let g:lua_complete_omni = 1 "do not use this, use when necessary
+
+
 "========= ultisnips ====================
 "
 "let g:UltiSnipsSnippetDirectories=["UltiSnips", "/home/clynamen/.vim/clynamen-snippets/"]
@@ -205,4 +224,6 @@ let g:necoghc_enable_detailed_browse = 1
 "nnoremap <leader>c :w<CR>:!rubber --pdf --warn all %<CR>
 "" View PDF macro; '%:r' is current file's root (base) name.
 "nnoremap <leader>v :!okular %:r.pdf > /dev/null 2>&1 &<CR><CR>
+
+set nofoldenable    " disable folding
 

@@ -19,3 +19,5 @@
   editor = vim
 [diff]
   tool = vimdiff
+[url "https://"]
+	insteadOf = git://
