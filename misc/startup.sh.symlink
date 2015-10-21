@@ -1,5 +1,5 @@
 #!/bin/bash
-#dunst &
+dunst &
 
 xrdb -merge ~/.Xresources &
 
@@ -16,4 +16,4 @@ xbindkeys &
 sleep 2
 urxvt -e "weechat-curses" &
 
-redshift -l 45.0667:7.7000 &
+#redshift -l 45.0667:7.7000 &

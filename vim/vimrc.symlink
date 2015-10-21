@@ -17,7 +17,6 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'c9s/perlomni.vim'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-surround'
 Plugin 'lekv/vim-clewn'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -47,6 +46,15 @@ Plugin 'zah/nimrod.vim'
 "html/css
 Plugin 'mattn/emmet-vim'
 Plugin 'jaxbot/browserlink.vim'
+Plugin 'kopischke/unite-spell-suggest'
+"pandoc
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+"editing
+Plugin 'tpope/vim-surround'
+"gui
+Plugin 'bling/vim-airline'
+Plugin 'easymotion/vim-easymotion'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -60,6 +68,7 @@ filetype plugin indent on    " required
 set history=1000 "Store lots of :cmdline history
 set showcmd "Show incomplete cmds down the bottom
 set showmode "Show current mode down the bottom
+set title
 "set gcr=a:blinkon0 "Disable cursor blink
 "set visualbell "No sounds
 "set autoread "Reload files changed outside vim
@@ -92,7 +101,6 @@ set hlsearch "Hilight searches by default
 " Only works all the time.
 
 silent !mkdir ~/.vim/backups > /dev/null 2>&1
-set undodir=~/.vim/backups
 set undofile
 
 " ================ Indentation ======================
@@ -227,3 +235,23 @@ let g:lua_complete_dynamic = 0 " interferes with YouCompleteMe
 
 set nofoldenable    " disable folding
 
+""========== pandoc ===========
+function! PotionCompileAndRunFile()
+  silent !clear
+  let fname = expand("%:r")
+  :exec '!pandoc ' . expand("%") . ' -o ' . fname . '.pdf '  
+endfunction
+
+function s:MDSettings()
+  noremap <buffer> <Leader>c :call PotionCompileAndRunFile()<CR>
+endfunction
+
+autocmd BufRead,BufNewFile *.md setfiletype markdown
+autocmd FileType markdown :call <SID>MDSettings()
+"" ==============================
+
+""========= Unite ============
+
+map z= :Unite spell_suggest<CR>
+
+"" ==============================
