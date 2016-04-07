@@ -55,6 +55,7 @@ Plugin 'tpope/vim-surround'
 "gui
 Plugin 'bling/vim-airline'
 Plugin 'easymotion/vim-easymotion'
+Plugin 'rhysd/vim-clang-format'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -222,10 +223,17 @@ let g:lua_complete_dynamic = 0 " interferes with YouCompleteMe
 "========= ultisnips ====================
 "
 "let g:UltiSnipsSnippetDirectories=["UltiSnips", "/home/clynamen/.vim/clynamen-snippets/"]
+
+"let g:UltiSnipsSnippetsDir        = $HOME.'/.vim/UltiSnips/'
+"let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+let g:UltiSnipsListSnippets="<c-h>"
+let g:ycm_complete_in_comments = 1 
+let g:ycm_seed_identifiers_with_syntax = 1 
+let g:ycm_collect_identifiers_from_comments_and_strings = 1 
 "
-"let g:UltiSnipsExpandTrigger="<c-j>"
-"let g:UltiSnipsJumpForwardTrigger="<c-j>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-b>"
 "
 ""============ latex ===============
 "" LaTeX (rubber) macro for compiling
@@ -249,6 +257,33 @@ endfunction
 autocmd BufRead,BufNewFile *.md setfiletype markdown
 autocmd FileType markdown :call <SID>MDSettings()
 "" ==============================
+
+
+let g:clang_format#auto_formatexpr=1
+let g:clang_format#style_options = {
+            \ "BasedOnStyle" : "LLVM",
+            \ "UseTab" : "Never",
+            \ "IndentWidth" : 4,
+            \ "BreakBeforeBraces" : "Attach",
+            \ "AllowShortIfStatementsOnASingleLine" : "false",
+            \ "IndentCaseLabels" : "true",
+            \ "ColumnLimit" : 0,
+            \ "PointerAlignment" : "Left",
+            \ "AccessModifierOffset" : -4,
+            \ "AllowShortLoopsOnASingleLine" : "false",
+            \ "AllowShortFunctionsOnASingleLine" : "false",
+            \ "MaxEmptyLinesToKeep" : 2,
+            \ "AlwaysBreakTemplateDeclarations" : "true",
+            \ "Standard" : "Auto",
+            \ "BreakConstructorInitializersBeforeComma" : "true",
+            \ "AllowAllParametersOfDeclarationOnNextLine" : "false",
+            \ "BinPackParameters" : "false",
+            \}
+
+autocmd FileType c,cpp,objc nnoremap <buffer><Leader>cf :<C-u>ClangFormat<CR>
+autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
+"
+
 
 ""========= Unite ============
 
