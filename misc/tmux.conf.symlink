@@ -1,8 +1,8 @@
 set -g default-terminal "screen-256color"
 set -g base-index 1
 set -g pane-base-index 1
-setw -g utf8 on
-set -g status-utf8 on
+#setw -g utf8 on
+#set -g status-utf8 on
 
 bind-key c  new-window -c "#{pane_current_path}"
 

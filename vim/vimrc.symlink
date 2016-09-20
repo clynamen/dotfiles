@@ -43,6 +43,7 @@ Plugin 'fatih/vim-go'
 Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'xolox/vim-misc'
 Plugin 'zah/nimrod.vim'
+Plugin 'plasticboy/vim-markdown'
 "html/css
 Plugin 'mattn/emmet-vim'
 Plugin 'jaxbot/browserlink.vim'
@@ -56,6 +57,9 @@ Plugin 'tpope/vim-surround'
 Plugin 'bling/vim-airline'
 Plugin 'easymotion/vim-easymotion'
 Plugin 'rhysd/vim-clang-format'
+Plugin 'salinasv/vim-vhdl'
+Plugin 'xolox/vim-easytags'
+Plugin 'lambdatoast/elm.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
