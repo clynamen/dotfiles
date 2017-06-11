@@ -254,7 +254,7 @@ function! PotionCompileAndRunFile()
   :exec '!pandoc ' . expand("%") . ' -o ' . fname . '.pdf '  
 endfunction
 
-function s:MDSettings()
+function! s:MDSettings()
   noremap <buffer> <Leader>c :call PotionCompileAndRunFile()<CR>
 endfunction
 
@@ -294,3 +294,11 @@ autocmd FileType c,cpp,objc vnoremap <buffer><Leader>cf :ClangFormat<CR>
 map z= :Unite spell_suggest<CR>
 
 "" ==============================
+
+"" python
+function! Python_setup_ss()
+  set expandtab
+  set tabstop=4
+  set autoindent
+endfunction
+autocmd FileType py call Python_setup_ss()

@@ -13,8 +13,9 @@ xbindkeys &
 
 /home/clynamen/.scripts/batteryNotify.sh &
 
-redshift -l 45.070312:7.686856 &
+#redshift -l 45.070312:7.686856 &
 
 sleep 10
 urxvt -e "weechat-curses" &
+skype&
 

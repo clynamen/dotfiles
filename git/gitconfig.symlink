@@ -10,6 +10,7 @@
   rank-contributers = !$ZSH/bin/git-rank-contributers
   count   = !git shortlog -sn
   lg = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr %an)%Creset' --abbrev-commit --date=relative --graph
+	d = difftool
 [color]
   diff = auto
   status = auto
@@ -18,6 +19,14 @@
 [core]
   editor = vim
 [diff]
-  tool = vimdiff
+	tool = vimdiff
 [url "https://"]
 	insteadOf = git://
+[difftool]
+	prompt = false
+[url "git://anongit.kde.org/"]
+	insteadOf = kde:
+[url "git@git.kde.org:"]
+	pushInsteadOf = kde:
+[pack]
+	windowMemory = 64m
