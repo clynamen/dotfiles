@@ -8,6 +8,9 @@ call vundle#begin()
  " let Vundle manage Vundle
 Plugin 'gmarik/vundle'
  " my bundles
+Plugin 'fatih/vim-go'
+Plugin 'davidhalter/jedi-vim'
+Plugin 'vim-scripts/indentpython.vim'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'wesleyche/SrcExpl'
 Plugin 'Command-T'
@@ -39,7 +42,6 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'lukerandall/haskellmode-vim'
 Plugin 'Shougo/unite.vim'
 Plugin 'Twinside/vim-hoogle'
-Plugin 'fatih/vim-go'
 Plugin 'xolox/vim-lua-ftplugin'
 Plugin 'xolox/vim-misc'
 Plugin 'zah/nimrod.vim'
