@@ -17,5 +17,7 @@ xbindkeys &
 
 sleep 10
 urxvt -e "weechat-curses" &
-skype&
+/usr/bin/teams
+#skype&
 
+discord
